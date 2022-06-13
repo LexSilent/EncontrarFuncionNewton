@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="793.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.encontrarfuncionnewton.HelloController">
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="528.0" prefWidth="181.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Calcular un valor en la función" wrapText="true">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfValor" promptText="Valor a calcular">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </TextField>
+            <Button mnemonicParsing="false" onAction="#btnCalcularValor" text="Calcular">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Label fx:id="lblResultadoValor" text="Resultado" wrapText="true">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <HBox spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Interpolacion de Newton">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="5.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="tfPuntos" prefHeight="26.0" prefWidth="467.0" promptText="puntos (10,8)(17,15)(50,0)" />
+            <Button mnemonicParsing="false" onAction="#btnCalcularFuncion" text="Calcular funcion" />
+         </children>
+      </HBox>
+   </top>
+   <bottom>
+      <Label fx:id="labelResultado" alignment="TOP_CENTER" contentDisplay="TEXT_ONLY" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="40.0" prefWidth="793.0" text="Funcion" textAlignment="CENTER" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </bottom>
+   <center>
+      <LineChart fx:id="lcGrafica" prefHeight="528.0" prefWidth="654.0" BorderPane.alignment="CENTER">
+        <xAxis>
+          <NumberAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </LineChart>
+   </center>
+</BorderPane>
